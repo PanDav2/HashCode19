@@ -1,5 +1,15 @@
 
-from reader import read_input
+from reader import read_input, generate_output
+
+def assign_test(photos):
+    slides = []
+    for p in photos:
+        slide = []
+        slide.append(p)
+        if p.orient:
+            continue
+        slides.append(slide)
+    return slides
 
 files = [
     'a_example.txt',
@@ -9,6 +19,9 @@ files = [
     'e_shiny_selfies.txt'
 ]
 
-photos = read_input('./data/a_example.txt')
+file = 'a_example.txt'
+photos = read_input('./data/' + file)
+slides = assign_test(photos)
+generate_output(slides, './out/' + file + '.out')
 
-print(photos)
+print(slides)
