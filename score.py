@@ -3,7 +3,7 @@ import itertools
 
 def tags(slide):
     if len(slide) == 1:
-        return slide.tags
+        return slide[0].tags
     p1, p2 = slide
     return p1.tags.union(p2.tags)
 
