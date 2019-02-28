@@ -3,6 +3,14 @@ from reader import read_input, generate_output
 from score import totalscore
 
 
+def vh(file):
+    photos = read_input(f"./data/{file}")
+    v = [p for p in photos if p.orient]
+    h  = [p for p in photos if not p.orient]
+    return v, h
+
+
+
 def assign_test(photos):
     slides = []
     tslide = []
@@ -27,7 +35,8 @@ files = [
 ]
 
 for file in files:
-    photos = read_input(f"./data/{file}")
-    slides = assign_test(photos)
-    generate_output(slides, f"./out/{file}.out")
-    print(file, totalscore(slides))
+    v, h = vh(file)
+    vs = [(i, k) for i, k in zip(v[0::2], v[1::2])]
+    vs.extend([[hs] for hs in h])
+    print(vs)
+    generate_output(vs, f"./out/{file}.out")
