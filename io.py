@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from .photos import Photo
+
 
 def read_input(iname):
     photos = []
@@ -10,7 +12,7 @@ def read_input(iname):
             tokens = l.strip().split(' ')
             is_vertical = (tokens[0] == 'V')
             tags = set(tokens[2:])
-            photos.append(Photos(id, is_vertical, tags))
+            photos.append(Photo(id, is_vertical, tags))
 
     assert N == len(photos)
     return photos
