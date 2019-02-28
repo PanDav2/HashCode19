@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from .photos import Photo
+from photos import Photo
 
 
 def read_input(iname):
