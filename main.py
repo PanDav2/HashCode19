@@ -1,5 +1,6 @@
 
 from reader import read_input, generate_output
+from score import totalscore
 
 
 def assign_test(photos):
@@ -26,7 +27,7 @@ files = [
 ]
 
 for file in files:
-    photos = read_input('./data/' + file)
+    photos = read_input(f"./data/{file}")
     slides = assign_test(photos)
-    generate_output(slides, './out/' + file + '.out')
-    print(slides)
+    generate_output(slides, f"./out/{file}.out")
+    print(file, totalscore(slides))
