@@ -11,11 +11,11 @@ def assign_test(photos):
         if p.orient:
             tslide.append(p)
             if len(tslide) == 2:
-                slide = tslide
+                slides.append(tuple(tslide))
                 tslide = []
         else :
             slide.append(p)
-        slides.append(slide)
+            slides.append(slide)
     return slides
 
 files = [
