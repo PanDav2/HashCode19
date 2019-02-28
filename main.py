@@ -1,13 +1,19 @@
 
 from reader import read_input, generate_output
 
+
 def assign_test(photos):
     slides = []
+    tslide = []
     for p in photos:
         slide = []
-        slide.append(p)
         if p.orient:
-            continue
+            tslide.append(p)
+            if len(tslide) == 2:
+                slide = tslide
+                tslide = []
+        else :
+            slide.append(p)
         slides.append(slide)
     return slides
 
