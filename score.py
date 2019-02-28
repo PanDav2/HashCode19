@@ -1,16 +1,23 @@
 import itertools
 
 
+def tags(slide):
+    if len(slide) == 1:
+        return slide.tags
+    p1, p2 = slide
+    return p1.tags.union(p2.tags)
+
+
 def left_score(l, r):
-    return len(l.tags) - middle_score(l, r)
+    return len(tags(l)) - middle_score(l, r)
 
 
 def right_score(l, r):
-    return len(r.tags) - middle_score(l, r)
+    return len(tags(r)) - middle_score(l, r)
 
 
 def middle_score(l, r):
-    return len(l.tags.intersection(r.tags))
+    return len(tags(l).intersection(tags(r)))
 
 
 def pairwise(iterable):
