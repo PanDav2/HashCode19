@@ -1,16 +1,16 @@
 import itertools
 
 
-def left_score(c, n):
-    return 0
+def left_score(l, r):
+    return len(l) - middle_score(l, r)
 
 
-def right_score(c, n):
-    return 0
+def right_score(l, r):
+    return len(r) - middle_score(l, r)
 
 
-def middle_score(c, n):
-    return 0
+def middle_score(l, r):
+    return len(l.tags.intersection(r.tags))
 
 
 def pairwise(iterable):
@@ -19,11 +19,11 @@ def pairwise(iterable):
     return zip(a, b)
 
 
-def score(slides):
-    for c, n in pairwise(slides):
-        ls = left_score(c, n)
-        ms = middle_score(c, n)
-        rs = right_score(c, n)
+def score(slider):
+    for l, r in pairwise(slider):
+        ls = left_score(l, r)
+        ms = middle_score(l, r)
+        rs = right_score(l, r)
 
     return min(ls, ms, rs)
 
