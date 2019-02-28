@@ -19,9 +19,8 @@ files = [
     'e_shiny_selfies.txt'
 ]
 
-file = 'a_example.txt'
-photos = read_input('./data/' + file)
-slides = assign_test(photos)
-generate_output(slides, './out/' + file + '.out')
-
-print(slides)
+for file in files:
+    photos = read_input('./data/' + file)
+    slides = assign_test(photos)
+    generate_output(slides, './out/' + file + '.out')
+    print(slides)
