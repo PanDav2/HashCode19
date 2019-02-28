@@ -19,8 +19,8 @@ def pairwise(iterable):
     return zip(a, b)
 
 
-def score(slides):
-    for l, r in pairwise(slides):
+def score(slider):
+    for l, r in pairwise(slider):
         ls = left_score(l, r)
         ms = middle_score(l, r)
         rs = right_score(l, r)
