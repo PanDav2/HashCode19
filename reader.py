@@ -12,7 +12,7 @@ def read_input(iname):
             tokens = l.strip().split(' ')
             is_vertical = (tokens[0] == 'V')
             tags = set(tokens[2:])
-            photos.append(Photo(id, is_vertical, tags))
+            photos.append(Photo(i, is_vertical, tags))
 
     assert N == len(photos)
     return photos
