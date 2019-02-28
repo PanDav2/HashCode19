@@ -5,7 +5,7 @@ class Photo(object):
 		self.tags = set(tags)
 
 	def __repr__(self):
-		return str(self.tags)
+		return str(f"{'V' if self.orient else 'H'} {self.tags}")
 
 
 if __name__ == '__main__':
