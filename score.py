@@ -2,11 +2,11 @@ import itertools
 
 
 def left_score(l, r):
-    return len(l) - middle_score(l, r)
+    return len(l.tags) - middle_score(l, r)
 
 
 def right_score(l, r):
-    return len(r) - middle_score(l, r)
+    return len(r.tags) - middle_score(l, r)
 
 
 def middle_score(l, r):
