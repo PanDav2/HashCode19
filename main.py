@@ -34,6 +34,8 @@ files = [
     'e_shiny_selfies.txt'
 ]
 
+
+
 for file in files:
     v, h = vh(file)
     vs = [(i, k) for i, k in zip(v[0::2], v[1::2])]
